@@ -1,0 +1,112 @@
+/* Catppuccin Latte Theme for Org HTML Exports */
+body {
+    background-color: #eff1f5; /* Base */
+    color: #4c4f69; /* Text */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Headings */
+h1 { color: #8839ef; /* Mauve */ }
+h2 { color: #fe640b; /* Peach */ }
+h3 { color: #df8e1d; /* Yellow */ }
+h4 { color: #40a02b; /* Green */ }
+h5 { color: #209fb5; /* Sapphire */ }
+h6 { color: #e64553; /* Maroon */ }
+
+/* Links */
+a {
+    color: #1e66f5; /* Blue */
+    text-decoration: none;
+}
+a:hover {
+    color: #7287fd; /* Lavender */
+    text-decoration: underline;
+}
+
+/* Code blocks */
+pre, code {
+    background-color: #dce0e8; /* Crust */
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+}
+code {
+    padding: 0.2rem 0.4rem;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    border: 2px solid #bcc0cc; /* Added outer border - Surface1 */
+    border-radius: 4px;
+    overflow: hidden; /* For border-radius to work with tables */
+}
+th {
+    background-color: #ccd0da; /* Surface0 */
+    color: #5c5f77; /* Subtext1 */
+}
+td, th {
+    border: 1px solid #bcc0cc; /* Surface1 */
+    padding: 0.5rem;
+}
+tr:nth-child(even) {
+    background-color: #e6e9ef; /* Mantle */
+}
+/* Ensure the table header has a slightly more prominent border */
+thead {
+    border-bottom: 2px solid #bcc0cc; /* Surface1 */
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #dc8a78; /* Rosewater */
+    padding-left: 1rem;
+    margin-left: 0;
+    color: #5c5f77; /* Subtext1 */
+}
+
+/* List items */
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #9ca0b0; /* Overlay0 */
+    margin: 2rem 0;
+}
+
+/* Custom class for notes */
+.note {
+    background-color: #e6e9ef; /* Mantle */
+    border-left: 4px solid #04a5e5; /* Sky */
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* TOC styling */
+#table-of-contents {
+    background-color: #dce0e8; /* Crust */
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+#table-of-contents h2 {
+    color: #dd7878; /* Flamingo */
+    margin-top: 0;
+}
+#table-of-contents ul {
+    list-style-type: none;
+}

@@ -1,0 +1,294 @@
+:root {
+  /* Accent colors */
+  --rosewater: #dc8a78;
+  --flamingo: #dd7878;
+  --pink: #ea76cb;
+  --mauve: #8839ef;
+  --red: #d20f39;
+  --maroon: #e64553;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --sky: #04a5e5;
+  --sapphire: #209fb5;
+  --blue: #1e66f5;
+  --lavender: #7287fd;
+
+  /* Interface layers */
+  --text: #4c4f69;
+  --subtext1: #5c5f77;
+  --subtext0: #6c6f85;
+  --overlay2: #7c7f93;
+  --overlay1: #8c8fa1;
+  --overlay0: #9ca0b0;
+  --surface2: #acb0be;
+  --surface1: #bcc0cc;
+  --surface0: #ccd0da;
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--mantle);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+/* Tech badges color classes - Updated */
+.emacs { background-color: var(--mauve); }
+.python { background-color: var(--teal); }
+.php { background-color: var(--lavender); }
+.css { background-color: var(--sky); }
+.gleam { background-color: var(--peach); }
+.zig { background-color: var(--maroon); }
+.arch { background-color: var(--blue); }
+.haskell { background-color: var(--lavender); }
+.postgresql { background-color: var(--sapphire); }
+
+/* Layout containers */
+.container {
+    width: 800px;
+    height: 600px;
+    display: flex;
+    background-color: var(--base);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.main-content {
+    width: 600px;
+    height: 100%;
+    background-color: var(--crust);
+    border-radius: 8px;
+    box-shadow: 0 0 0 7.5px var(--mantle);
+}
+
+/* Navigation */
+.nav-menu {
+    width: 175px;
+    height: 100%;
+    background-color: var(--crust);
+    border-radius: 8px;
+    box-shadow: 0 0 0 7.5px var(--mantle);
+    margin-right: 25px;
+}
+
+.nav-menu ul {
+    padding: 0;
+    margin: 10, 0, 0, 0,;
+    list-style-type: none;
+    flex-direction: column;
+    gap: 5px;
+    margin-right: 8px;
+    margin-left: 8px;
+    color: var(--blue);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-menu li {
+  font-size: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--surface0);
+    transition: transform 0.2s ease;
+    position: relative; /* Required for pseudo-element positioning */
+    z-index: 1; /* Ensure text stays above the wave */
+    margin-top: 10px
+}
+
+.nav-menu li:hover {
+    transform: translateX(3px);
+    box-shadow: 0 0 0 3px var(--mauve);
+    background-color: var(--surface1);
+    color: var(--mauve);
+}
+
+.nav-menu a {
+  display: block; /* Makes the link fill the entire list item */
+  padding: 12px; /* Matches the padding of the <li> */
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 8px; /* Matches the <li> border-radius */
+}
+
+.nav-menu li.active {
+    background-color: var(--mauve); /* Change to your desired color */
+    box-shadow: 0 0 0 3px var(--mantle); /* Optional: Add a subtle shadow */
+}
+.nav-menu li.active a {
+    color: var(--base); /* Ensures the link inside the active item takes priority */
+}
+
+/* Add the wave effect */
+.nav-menu li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%; /* Start the gradient off-screen */
+    width: 300%; /* Make it wide enough to cover the box */
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--mauve), transparent);
+    z-index: 0; /* Place it behind the text */
+    opacity: 0; /* Initially invisible */
+    pointer-events: none; /* Prevent interfering with hover */
+    transform: translateX(-100%); /* Start off-screen */
+    transition: opacity 3s ease; /* Smooth fade-in */
+}
+
+/* Trigger the wave animation on hover */
+.nav-menu li:hover::before {
+    opacity: 1; /* Make the wave visible */
+    animation: wave 2s linear infinite; /* Start the wave animation */
+}
+
+
+
+/* Keyframes for the wave animation */
+@keyframes wave {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    to {
+        transform: translateX(100%); /* Move off-screen to the right */
+    }
+}
+/* Profile section */
+.profile-image {
+  height: 275px;
+  width: 275px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--lavender);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* About me sections */
+.ABOUT-ME-container {
+  margin-left: 5px;
+  margin-top: 5px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    border-radius: 8px;
+}
+.divider {
+  margin-top: 10px;
+  background-color: var(--mantle);
+    height: 8px;
+    width: 100%;
+    padding: 0px;
+}
+.ABOUT-ME-bottom-container {
+  margin-top: 0px;
+    width: 100%;
+    height: 236px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.ABOUT-ME-image-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* Badges */
+.badge-grid {
+  width: 250px;
+  height: 95%;
+  margin: 0 auto;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  border-radius: 15px;
+}
+
+.badge-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.badge-icon img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+}
+
+/* Description section */
+.description-section {
+  height: 100%;
+  padding: 20px;
+  background-color: var(--surface0);
+  color: var(--subtext1);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  border-top: 1px solid var(--surface0);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.description-section p {
+}
+
+.description-section h2 {
+  color: var(--text);
+}
+
+
+/* Notes Page*/
+.recent-notes-list {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.recent-notes-list ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-notes-list ul a, li a {
+  color: var(--rosewater);
+  font-weight: 900;
+  font-size: 20px;
+  text-decoration: none; /* Removes underlines */
+  background-color: transparent;
+}
+
+
+.note-block {
+  justify-content: center;
+  display: flex;
+  height: 25px;
+  width: 250px;
+  background-color: var(--overlay1);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  
+}

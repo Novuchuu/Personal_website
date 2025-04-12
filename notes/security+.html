@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-11 Fri 11:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Security+</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="css/catppuccin_html.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Security+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaa3edf6">1. Threats, Vulnreabilities, and Mitigations</a>
+<ul>
+<li><a href="#orgb4feb4c">1.1. Understanding attacks</a>
+<ul>
+<li><a href="#orgae6650a">1.1.1. attacks and Defense stratagys</a></li>
+<li><a href="#orgec4c773">1.1.2. attack Surfaces</a></li>
+</ul>
+</li>
+<li><a href="#orga9b1de0">1.2. Social Engineering</a>
+<ul>
+<li><a href="#org3b329a7">1.2.1. Social Engineering Overview</a></li>
+</ul>
+</li>
+<li><a href="#org459fd95">1.3. Malware</a>
+<ul>
+<li><a href="#orgf380126">1.3.1. Malware</a></li>
+<li><a href="#orgcd3a0b2">1.3.2. Malware Protection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge293a17">2. Cryptographic Solutions</a>
+<ul>
+<li><a href="#org276354e">2.1. Cryptography</a>
+<ul>
+<li><a href="#org6968e8d">2.1.1. Cryptography overivew</a></li>
+<li><a href="#org8016827">2.1.2. Symmetric and Asymmetric</a></li>
+<li><a href="#orgb8079da">2.1.3. Cryptography</a></li>
+<li><a href="#org6764723">2.1.4. Block chain overivew</a></li>
+</ul>
+</li>
+<li><a href="#orgc9f6a45">2.2. Crypography Implemntations</a>
+<ul>
+<li><a href="#orgaf5820a">2.2.1. Implemtation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org58ea5a4">3. org-footnote-section</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa3edf6" class="outline-2">
+<h2 id="orgaa3edf6"><span class="section-number-2">1.</span> Threats, Vulnreabilities, and Mitigations</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb4feb4c" class="outline-3">
+<h3 id="orgb4feb4c"><span class="section-number-3">1.1.</span> Understanding attacks</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgae6650a" class="outline-4">
+<h4 id="orgae6650a"><span class="section-number-4">1.1.1.</span> attacks and Defense stratagys</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Attack Stratagies</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Strategy</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Reconnasisasance</td>
+<td class="org-left">gathering info an org</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- System Hardware info</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Network configuration</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Individual Information</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Social Engineering</td>
+<td class="org-left">- Intimidation</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Sympathy</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Technical Approch</td>
+<td class="org-left">using software or utils to finde vulnrulbilitys</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Port scan</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Ping Sweep</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- pen of system</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">once breached gain authority</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Breach the system</td>
+<td class="org-left">penetration of system defenses</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Escalate Priviliges</td>
+<td class="org-left">obtain higher privliges so the attacker has</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Aecess to more info</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- has greater control of the system</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Create a backdoor</td>
+<td class="org-left">create a way to exploit the system without being noticed</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Stage Computers</td>
+<td class="org-left">preparing to preform additonal tasks in the attack</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Exploit Vulnrebilites</td>
+<td class="org-left">- Steal information</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Deny services</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Crash systems</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Modify/altr information</td>
+</tr>
+</tbody>
+</table>
+<p>
+<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Defense Methodologies</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Method</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Layering</td>
+<td class="org-left">layers multiple security stratagys to prevent single point of failure</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Principle of least privilege</td>
+<td class="org-left">users/groups only get the access needed to do there job and nothing more</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Variety</td>
+<td class="org-left">Defensieve layers should contain a variety of methods. IE not the same one twice</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Randomness</td>
+<td class="org-left">constant change of habits and passwords</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Simplicity</td>
+<td class="org-left">Security measures should not be too complex that it makes it difficult and hard to understand</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgec4c773" class="outline-4">
+<h4 id="orgec4c773"><span class="section-number-4">1.1.2.</span> attack Surfaces</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 3:</span> Attack surfaces</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Attack vector</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Network</td>
+<td class="org-left">- Direct Acess</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Wired network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Remote &amp; Wireless Network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Cloud Acess</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Bluetooth network</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Default redentials</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Open service Port</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Lure</td>
+<td class="org-left">- Removeable Device</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Executable File</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Doccument Files</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Image files</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Message</td>
+<td class="org-left">- email</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- SMS</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- IM</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Web &amp; Social media</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Supply chain</td>
+<td class="org-left">- Supplier</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Vendor</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Buisness partner</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9b1de0" class="outline-3">
+<h3 id="orga9b1de0"><span class="section-number-3">1.2.</span> Social Engineering</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org3b329a7" class="outline-4">
+<h4 id="org3b329a7"><span class="section-number-4">1.2.1.</span> Social Engineering Overview</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>Hard to detect</li>
+<li>Hard to track</li>
+<li>Hard to catch</li>
+<li>Educaiton is the ONLY solution</li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Techniques
+<ul class="org-ul">
+<li>Moral obligation</li>
+<li>Inate human trust</li>
+<li>Threating</li>
+<li>Offering something for very little in return</li>
+<li>Ignorance</li>
+<li>Authority and fear</li>
+<li>Social proof</li>
+<li>Scarcity</li>
+<li>Likeability</li>
+<li>Urgency</li>
+<li>Common ground and share intrest</li>
+</ul></li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Social enginerring Process
+<ol class="org-ol">
+<li>Research</li>
+
+<li>Development</li>
+
+<li>Exploitation</li>
+</ol></li>
+</ul>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>Human Vectors
+<ul class="org-ul">
+<li>Impersonation and pretexting
+<ul class="org-ul">
+<li>Persuasive/consensus/liking</li>
+<li>Corecion/threat/ergency</li>
+</ul></li>
+<li>Phising and Pharming
+<ul class="org-ul">
+<li>Phising</li>
+<li>Vishing</li>
+<li>SMiShing</li>
+<li>pharming</li>
+<li>typosquatting</li>
+<li>business email compramise</li>
+<li>brand Impersonation and Dininformation</li>
+<li>watering hole attack</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org459fd95" class="outline-3">
+<h3 id="org459fd95"><span class="section-number-3">1.3.</span> Malware</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgf380126" class="outline-4">
+<h4 id="orgf380126"><span class="section-number-4">1.3.1.</span> Malware</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>Malware Classification
+<ul class="org-ul">
+<li>Viruses and worms
+<ul class="org-ul">
+<li>can spread without any authorization from the user</li>
+</ul></li>
+<li>Trojan
+<ul class="org-ul">
+<li>concelaed within installer packages for software. Designed to operate secretly</li>
+</ul></li>
+<li>PUPs/PUAs
+<ul class="org-ul">
+<li>bloatware I.E Windows</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div id="org86dbcc0" class="figure">
+<p><img src="./images/malware_classification.png " alt="malware_classification.png " width="600px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Malware classification</p>
+</div>
+<ul class="org-ul">
+<li>Computer Viruses
+<ul class="org-ul">
+<li>Non-resident/file infector
+<ul class="org-ul">
+<li>contained in a hest executable and will infect other process images</li>
+</ul></li>
+<li>Memery resident
+<ul class="org-ul">
+<li>creates new process for itself in memory</li>
+</ul></li>
+<li>Boot
+<ul class="org-ul">
+<li>Virus when OS starts like disk boot sector, partiton table, USB media, etc.</li>
+</ul></li>
+<li>Script and macro viruses
+<ul class="org-ul">
+<li>VMalware from local scripting engines</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>
+<br />
+</p>
+<dl class="org-dl">
+<dt>multipartite</dt><dd>viruses with multiple vectors</dd>
+<dt>polymorphic</dt><dd>viruses that can dynamically change or obfuscate their code to evade detection</dd>
+</dl>
+<p>
+<br />
+</p>
+<ul class="org-ul">
+<li>filesless malware
+<ul class="org-ul">
+<li>Does not write its code to disk</li>
+<li>uses lightweight shell code to achieve backdoor mechinism on host</li>
+<li>may use &ldquo;live off the land&rdquo; techniques rather then compiled</li>
+</ul></li>
+
+<li id="advanced presistent threat (APT), advanced volatile threat (AVT), low observable charataristic (LOC)">can describe the general class of modern filess/live off the land malware</li>
+
+<li>Spyware nad Keyloggers
+<ul class="org-ul">
+<li>Adware</li>
+<li>Spyware</li>
+<li>Keylogger</li>
+</ul></li>
+<li>Backdoors and RATS</li>
+<li>Rootkits</li>
+<li>Ransomware, Crypto-Malware, and Logic Bombs</li>
+<li>Cryptojacking Malware</li>
+<li>Logic Bombs</li>
+
+<li>Windows Privliages
+<ul class="org-ul">
+<li>user</li>
+<li>admin</li>
+<li>SYSTEM</li>
+</ul></li>
+
+<li>Execution Rings
+<ul class="org-ul">
+<li>Ring 0: Most privileged level, direct hardware access, reserved for kernel processes</li>
+<li>Ring 1/2: Used by drivers and I/O processes</li>
+<li>Ring 3: Where standard user-mode processes operate</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd3a0b2" class="outline-4">
+<h4 id="orgcd3a0b2"><span class="section-number-4">1.3.2.</span> Malware Protection</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 4:</span> Malware Prevention</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Options</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Patches</td>
+<td class="org-left">- Hardware Firmware Updaties</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Server and Client Operating Systems</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Applications, especially your web browser</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Malware protection software</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Anti-malware</td>
+<td class="org-left">- Anti-malware software</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Keep definition files up to date</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable antivirus scanning for email attachments</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable antivirus scanning for removable media</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Schedule regular scans</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Browser setteings</td>
+<td class="org-left">- Enable a pop-up blocker</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Enable privacy controls</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Monitor &amp; Manage cookies</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Reguraly clear the cache/history</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Disable or configue auto-complete settings not to store personal info</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Firewall</td>
+<td class="org-left">local firewall</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Training</td>
+<td class="org-left">Educate useres on common saftey tips</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Web Filter</td>
+<td class="org-left">Blocks malicious sites for users</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Malware Recovery
+<ul class="org-ul">
+<li>Remediate
+<ul class="org-ul">
+<li>Repair infection</li>
+<li>Quarantine the file</li>
+<li>Delete the filea</li>
+</ul></li>
+<li>Reinstall</li>
+<li>Re-image</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge293a17" class="outline-2">
+<h2 id="orge293a17"><span class="section-number-2">2.</span> Cryptographic Solutions</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org276354e" class="outline-3">
+<h3 id="org276354e"><span class="section-number-3">2.1.</span> Cryptography</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org6968e8d" class="outline-4">
+<h4 id="org6968e8d"><span class="section-number-4">2.1.1.</span> Cryptography overivew</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 5:</span> Crypto concepts</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">concept</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Encryption key</td>
+<td class="org-left">Used to encrypt/decrypt data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Symmetric descirption: Same key to decrypt &amp; encrypt</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Asymetric: One key to encrypt and one to decrypt</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Hashing</td>
+<td class="org-left">converting one value to another using a mathmatical algo</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Hasing is used on data that does not need to be decrypted such as passwords</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- a piece of data will always generate the same hash</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Hash can not be decrypted but may be found in a database</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Salt</td>
+<td class="org-left">adding a random number of charactars before the hash is creatated</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- EP*OTIOI8 &#x2013;&gt; EP*OTIOI8Password1</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- since salt in random its pratically impossible to find it in a database</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Digital Signature</td>
+<td class="org-left">- Create Signature: Combining a users private key and a hash</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Provides Non-repudiation and verifes the data is ligitimate</td>
+</tr>
+</tbody>
+</table>
+<p>
+<br />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 6:</span> Crypto methods</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Method</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Eilliptic Curve Cryptology (EEC)</td>
+<td class="org-left">a small key that is more secure than most methods</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Perfect Forward Secrecy</td>
+<td class="org-left">Instead of a key being used for a enitre converstation</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">each transmisson is ecrypted with a differnt unique key</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Steganogrpahy</td>
+<td class="org-left">hiding a piece of data/file within another file</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org8016827" class="outline-4">
+<h4 id="org8016827"><span class="section-number-4">2.1.2.</span> Symmetric and Asymmetric</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<ul class="org-ul">
+<li>Symmetric Algos
+<ul class="org-ul">
+<li>AES (Advanced Encryption Standard)</li>
+<li>DES (Data Encrytion Standard)</li>
+<li>RC (Rivest&rsquo;s Cipher)</li>
+<li>IDEA (International Data Encrytion Algorithem)</li>
+<li>Blowfish</li>
+<li>Twofish</li>
+<li>CAST</li>
+</ul></li>
+
+<li>Asymmetric Algos
+<ul class="org-ul">
+<li>RSA (Rivest-Shamir-Adleman)</li>
+<li>ECC (Elliptic Curve Cryptography)</li>
+<li>Diffie-Hellman</li>
+<li>DSA (Digital Signature)</li>
+</ul></li>
+
+<li>Hybrid Crytosystems
+combines the effincey of symmetric with the connvinece of asymmetric
+<ol class="org-ol">
+<li>User1 uses their symmetric private key to encrypt some data.</li>
+<li>User1 then encrypts that symmetric private key using the recipient&rsquo;s public key and sends both to the recipient.</li>
+<li>User2, the recipient, uses their private key to decrypt User 1&rsquo;s private key, which is then used to decrypt the message.</li>
+<li>As long as User2&rsquo;s private key is kept secret, the data remains secure.</li>
+</ol></li>
+<li>Ephemeral keys
+Generated for each new session or message sent. Mostly used in communication platforms</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8079da" class="outline-4">
+<h4 id="orgb8079da"><span class="section-number-4">2.1.3.</span> Cryptography</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<dl class="org-dl">
+<dt>Stream cipher</dt><dd>Symmetric encryption that encrypts data one bit at a time
+Uses a fixed-length seed key (ex: 2048 bits)
+<ol class="org-ol">
+<li>The seed key is run through a pseudorandom number generator, which outputs a new and unique encryption key the same size as the data being encrypted. This new key is called a keystream.</li>
+<li>The keystream is XORed with the data to create the ciphertext.</li>
+<li>The seed key can be used repeatedly throughout the encryption process.</li>
+</ol></dd>
+</dl>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 7:</span> Block Cipher</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Mode</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">ECB (Electronic Code Book)</td>
+<td class="org-left">Simplest mode</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- each block of plain text is encrypted seperatly</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Can be encrypted simultaneously</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- <b><b>Disadvantage</b></b>: block with identical data will</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">generate the same ciphertext</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">CBC (Cipher block Chaining)</td>
+<td class="org-left">Similar to CBC but uses an initialization vector (IV)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The IV is a starting var that is XORed with the</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">plaintext of the current block to encrypt data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The IV for the starting block is a randomly generated value.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Each subsequent IV is the ciphertext from the previos block</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- CBC is more secure then ECB due to the IV, but slower because</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">blocks need to be encrypted one at a time</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">CFB (Cipber Feedback Mode)</td>
+<td class="org-left">CFB also uses IV, but instead of using it on the plaintext the IV</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">is encrypted first. the output is the XORed with the plaintext to</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">create the block of cipher text</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Equivlent of using a one time pad to encrypt data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The IV for the starting block is a randomly generated value.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Each subsequnt IV is the ciphertext from the previous block</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">OFB (Output Feedback mode)</td>
+<td class="org-left">Identical to CFB except for the IV used after the first round</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The output of the IV encryption is used as the</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">next blocks cipher text</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">CTR (Counter Mode)</td>
+<td class="org-left">Instead of usining a initalization vector, CTR uses a nonce</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">combined with a counter that is encrypted</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- A nonce is a random string used for all blocks during</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">during the encryption process</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The encrypted output of the nonce and the counter is then</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">XORed with the plaintext to create ciphertext</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The counter Increments for each block. Ensure that each block</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">has a differnt value so that even if block have the same data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">the ciphertext will be differnt</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">GCM (Galois Counter Mode)</td>
+<td class="org-left">All other mode are unauthenticated. Galois provides both</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">encryption and authentication</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- GCM works like Counter mode, except the ciphertext is combined</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">with a special hash</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- The output of the ciphertext and hash contains the encrypted data</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">and a MAC (Message Authentication Code) that gives assurance that</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">the message has not been tamperd with</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- GCM is extreemly efficent and provideds authenticatio, it is often</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">used with network communication</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- GCM is the most widley used method for encryption with authentication</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Lightweight Cryptography
+Cryptograhy Addressing low powerd IOT devices
+<ul class="org-ul">
+<li>Small amount of RAM</li>
+<li>Low CPU power</li>
+<li>Low-powered or runs on battires</li>
+</ul></li>
+</ul>
+
+<p>
+Homomorphic Encryption :: allows date to be worked on without decrypting first
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 8:</span> Homomorphic encryption</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Encryption Type</td>
+<td class="org-left">Desc</td>
+</tr>
+
+<tr>
+<td class="org-left">PHE (Partially homomorphic encryption)</td>
+<td class="org-left">Allows the simplest math funciton to be preformed</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">an infinite number of times</td>
+</tr>
+
+<tr>
+<td class="org-left">SHE (Somewhat homomorphic encryption)</td>
+<td class="org-left">Allows more complex math but can only be preformed</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">a finite amount of times</td>
+</tr>
+
+<tr>
+<td class="org-left">FHE (Fully homorphic encryption)</td>
+<td class="org-left">Allows for complex and simple math funciton that</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">can be done a infinite number of times</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org6764723" class="outline-4">
+<h4 id="org6764723"><span class="section-number-4">2.1.4.</span> Block chain overivew</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li>Blockchin = decentraslyzed system,expanding list of transactional records, secured with cryptology
+<ul class="org-ul">
+<li>Each record is reford to as a block</li>
+<li>each block is ran thourgh a hash</li>
+<li>the hash value of the previous block in the chain is added to the hash calc of the next</li>
+<li>each block validates the hash of the previous block all the way to the beggining of the chain,</li>
+<li>each block incloudes a time stamp of one or more tranactions and data involved in the tranascations</li>
+<li>Recorded in a open public ledger</li>
+</ul></li>
+<li>Blockchain Transaction
+<ul class="org-ul">
+<li>Even though each transaction is publicly visible, all personal information is encrypted and hidden from everyone, even the nodes.</li>
+<li>Each block contains
+<ul class="org-ul">
+<li>Time</li>
+<li>Date</li>
+<li>Parties involved</li>
+<li>A unque hash</li>
+</ul></li>
+<li>Process
+<ol class="org-ol">
+<li>User1 requests a transaction with User2. The request is made using User1&rsquo;s personal secret key and User2&rsquo;s public key.</li>
+<li>The transaction is represented online as a block.</li>
+<li>The block is distributed to everyone on a peer-to-peer network.</li>
+<li>The network users verify that the transaction is valid.</li>
+<li>The block is added to the chain. This provides an indisputable and transparent record of the transaction.</li>
+<li>The contents of the transaction move to User2.</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9f6a45" class="outline-3">
+<h3 id="orgc9f6a45"><span class="section-number-3">2.2.</span> Crypography Implemntations</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgaf5820a" class="outline-4">
+<h4 id="orgaf5820a"><span class="section-number-4">2.2.1.</span> Implemtation</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>Hybrid Models
+Combines strengths of hashing, symmetric encryption and asymmetric encryption
+<ul class="org-ul">
+<li>Use symmetric encryption for fast and efficient encryption of bulk data.</li>
+<li>Use hashing to verify message integrity.</li>
+<li>Use asymmetric encryption for authentication and non-repudiation.</li>
+<li>Use asymmetric encryption for secure exchange of symmetric encryption keys (for example, by encrypting the key used for symmetric encryption prior to sharing the key with the recipient). Using asymmetric cryptography for encryption is best for small pieces of data.</li>
+</ul></li>
+<li>Obfuscation
+the art of making a message or data difficult to find
+<ul class="org-ul">
+<li>Seganography</li>
+<li>Data masking
+all or part of the content is redacted subsituting charactars</li>
+<li>Tokenization
+replaces data with token. The token can be used elsewhre to recieve the data</li>
+</ul></li>
+<li>Key lifecycle
+<ul class="org-ul">
+<li>Key Generation — creates an asymmetric key pair or symmetric secret key of the required strength using the chosen cipher.</li>
+<li>Storage
+prevents unauthorized access to a private or secret key and protects against loss or damage.</li>
+<li>Revocation
+prevents use of the key if it is compromised. If a key is revoked, any data that was encrypted using it should be re-encrypted using a new key.</li>
+<li>Expiration and Renewal
+gives the certificate a &ldquo;shelf-life,&rdquo; increasing security. Every certificate expires after a certain period. Certificates can be renewed with the same key pair or with a new key pair.</li>
+</ul></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 9:</span> Cryptoprocessor Hardware</caption>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Hardware</th>
+<th scope="col" class="org-left">Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">TPM (Trusted Platform Module)</td>
+<td class="org-left">Cryptoprocessor implemented as a module within the CPU</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Versions 1.2 and 2.0 in current use (not backward compatible)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Required by Windows 10 (v1607+) to be enabled by default</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Generates hash of startup files to verify integrity in BitLocker</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Creates hash of system components for validation and identification</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Required for Windows Credential Guard</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Provides protection for virtual-based security encryption keys</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Generates truly random numbers, preventing entropy</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Supports asymmetric encryption (can generate public/private keys)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Provides encrypted storage for passwords, keys, and certificates</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Allows Windows 10 to use keys directly without loading into RAM</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">HSM (Hardware Security Module)</td>
+<td class="org-left">Cryptoprocessor implemented in removable or dedicated form factor</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Available as rack-mounted appliances, PCIe cards, or USB devices</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Can be provisioned as a virtual appliance</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Generates and stores encryption keys</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Generates and validates digital signatures</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Generates keys used in smart cards</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- More powerful than TPMs for cryptographic functions</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Can perform multiple cryptographic functions simultaneously</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Can be network-attached to serve multiple users</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">- Also known as PCSM, SAM, or cryptographic modules</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org58ea5a4" class="outline-2">
+<h2 id="org58ea5a4"><span class="section-number-2">3.</span> org-footnote-section</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+oueu
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-04-11 Fri 11:23</p>
+</div>
+</body>
+</html>
